@@ -68,7 +68,7 @@ Para acessar o Metabase é necessário realizar um breve cadastro, relacionado a
 host: datawarehouse
 port: 5433
 user: deliverycenter
-senha: definir
+senha: dc2021
 database: analytics
 ``` 
 ## Autor
