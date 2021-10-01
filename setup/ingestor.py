@@ -6,7 +6,7 @@ import logging
 from conect.engineSQL import Conections
 
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.info)
+logger.setLevel(logging.INFO)
 
 # TODO: Criar conexão com a base de dados
 def createEngineSQL():
