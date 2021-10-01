@@ -65,8 +65,12 @@ Para acessar a base de dados `operations` e `analytics`, basta acessar as creden
 
 Para acessar o Metabase é necessário realizar um breve cadastro, relacionado ao acesso do DW, inserir:
 ```yaml
+# no Navegador digitar
+localhost:3000
+# Preencher o formulário de cadastro e em seguida
+# inserir estas informações
 host: datawarehouse
-port: 5433
+port: 5432
 user: deliverycenter
 senha: dc2021
 database: analytics
