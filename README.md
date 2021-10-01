@@ -78,12 +78,12 @@ database: analytics
 ## Construido com
 
 - [Docker](https://www.docker.com/products/docker-desktop): Usado para construir toda a infraestrutura necessária:
-  - [PostgreSQL](https://hub.docker.com/_/postgres): imagem oficial utilizada para os bancos relacionais e ana
+  - [PostgreSQL](https://hub.docker.com/_/postgres): imagem oficial utilizada para os bancos relacionais e analíticos
   - [Metabase](https://hub.docker.com/r/metabase/metabase): imagem oficial Metabase para construir as visualizações
-  - [Spark](https://hub.docker.com/r/bitnami/spark): imagem Bitnami para utilizar o framework Apache Spark, localmente _não usada_ 
+  - [Spark](https://hub.docker.com/r/bitnami/spark): imagem Bitnami para utilizar o framework Apache Spark, localmente (_não usada_) 
 - [Python-3.8](https://www.python.org/downloads/release/python-385/): Linguagem usada para o desenvolvimento do "EL"
-- [Pandas-1.3.3](https://pandas.pydata.org/docs/getting_started/install.html): Framework para trabalhar com dados em formatos de tabulares
-- [Sqlalchemy](https://pypi.org/project/SQLAlchemy/): Framework para criar as conexões com bancos de dados
+- [Pandas-1.3.3](https://pandas.pydata.org/docs/getting_started/install.html): Framework para trabalhar com dados em formatos tabulares
+- [Sqlalchemy](https://pypi.org/project/SQLAlchemy/): Framework para criar as conexões com os bancos de dados
 - [Psycopg2-binary](https://pypi.org/project/psycopg2-binary/): Driver necessário para a conexão com o PostgreSQL
 
 
