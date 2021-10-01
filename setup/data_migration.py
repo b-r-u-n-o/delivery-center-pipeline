@@ -76,7 +76,19 @@ def loadDataDW(name: str, df: pd.DataFrame) -> None:
         )
 
 
+# def criaCamada():
+#     """Cria do diretório"""
+
+#     parent_dir = "../datalake"
+#     directory = "raw"
+#     path = os.path.join(parent_dir, directory)
+#     logger.info(f"Diretório {directory} criado com sucesso no path {parent_dir}")
+
+
 if __name__ == "__main__":
+
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.INFO)
 
     nameFiles = [
         "channels",
@@ -90,37 +102,15 @@ if __name__ == "__main__":
 
     for i in nameFiles:
         tabela = extractData(tbla=i)
-        logger.info(f"[INFO]: carregada com sucesso a tabela {i}")
+        logger.info(f"Tabela extraída com sucesso {i}")
 
-        try:
-
-            tabela.to_csv(
-                f"/home/developer/Code/\
-                    datalab-work-at-deliverycenter/Lake/raw/LOAD_{i}.csv",
-                sep=";",
-                index=False,
-                index_label=False,
-            )
-            logger.info(f"Arquivo {i} salvo com sucesso na camada raw")
-
-        except OSError as e:
-            print(e)
-
-        else:
-            parent_dir = "/home/developer/Code/delivey-center-fluxo/datalake"
-            directory = "raw"
-            path = os.path.join(parent_dir, directory)
-            logger.info(
-                f"Diretório {directory} criado com sucesso no path {parent_dir}"
-            )
-
-            tabela.to_csv(
-                f"/home/developer/Code/delivey-center-fluxo/datalake/raw/LOAD_{i}.csv",
-                sep=";",
-                index=False,
-                index_label=False,
-            )
-            logger.info(f"Arquivo {i} salvo com sucesso na camada raw")
+        tabela.to_csv(
+            f"/home/developer/Code/delivery-center-fluxo/datalake/raw/LOAD_{i}.csv",
+            sep=";",
+            index=False,
+            index_label=False,
+        )
+        logger.info(f"Arquivo {i} salvo com sucesso na camada raw")
 
         loadDataDW(name=i, df=tabela)
         logger.info(
