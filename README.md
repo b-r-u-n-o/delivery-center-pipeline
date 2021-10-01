@@ -1,5 +1,7 @@
 # Delivery Center - Fluxo
 
+O fluxo apresentado de maneira macro segue um pipeline escalável de dados em um ambienta Cloud.
+
 ![Fluxo-dados](img/pipeline.png)
 
 ## Proposta
@@ -11,7 +13,7 @@ A ideia foi representar o fluxo de dados, percorrendo de forma geral:
 - Replicação dos dados em base analítica, que representada um DW
 - Carga dos dados no repositório de dados, que representa a camada "raw" do datalake
 - Scripts python para efetuar o "Extract e Load" dos dados
-
+  
 *Por limitações da máquina local, não foi possível reproduzir o ambiente com o Spark*
 
 ## Instalação
@@ -23,7 +25,7 @@ Primeiramente será necessário realizar a clonagem do repositório:
 ```shell
 # Cria um repositório local com base no remoto
 
-git clone <github/repo/b-r-u-n-o>
+git clone https://github.com/b-r-u-n-o/delivery-center-pipeline.git
 
 ```
 No diretório do projeto, abra o terminal e execute:
@@ -59,7 +61,16 @@ Após a conclusão, é possível executar o `setup/data_migration.py`, que reali
 
 python -m data_migration.py
 ```
+Para acessar a base de dados `operations` e `analytics`, basta acessar as credenciais no arquivo docker-compose.yml, em seguida poderá usar o Dbeaver, por exemplo.
 
+Para acessar o Metabase é necessário realizar um breve cadastro, relacionado ao acesso do DW, inserir:
+```yaml
+host: datawarehouse
+port: 5433
+user: deliverycenter
+senha: definir
+database: analytics
+``` 
 ## Autor
 
 - [Bruno Soares](https://www.linkedin.com/in/tsbruno/)

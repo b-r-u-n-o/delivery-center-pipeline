@@ -9,6 +9,8 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 # TODO: Criar conexão com a base de dados
+
+
 def createEngineSQL():
     """
     Cria a engine de conexão com o PostgresSQL
@@ -26,9 +28,6 @@ def createEngineSQL():
     con = Conections()
     engine = con.postgreSQL(user=USER, secret=SECRET, host=HOST, db=DB)
     return engine
-
-
-# TODO: Enviar os dados dos arquivos csv
 
 
 def filesPath():
@@ -66,7 +65,9 @@ def ingestSQL() -> None:
     with engine.begin() as connection:
 
         for f in files:
+
             df = pd.read_csv(f, delimiter=",", index_col=False, encoding="ISO-8859-1")
+
             logger.info(f"Ingestão {df.head()} ocorreu com sucesso.")
             df.to_sql(
                 name=names[n],
@@ -82,4 +83,4 @@ def ingestSQL() -> None:
 
 if __name__ == "__main__":
     ingestSQL()
-    logger.info(f"Ingestão finalizada com sucesso.")
+    logger.info("Ingestão finalizada com sucesso.")

@@ -6,7 +6,7 @@ import dotenv
 from conect.engineSQL import Conections
 
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.info)
+logger.setLevel(logging.INFO)
 
 
 def createEngineDB():
