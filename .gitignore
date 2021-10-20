@@ -175,4 +175,7 @@ cython_debug/
 infra/database/
 infra/datawarehouse/
 
+# Directories this data of project
+datalake/
+
 # End of https://www.toptal.com/developers/gitignore/api/dotenv,python,git,jupyternotebooks
