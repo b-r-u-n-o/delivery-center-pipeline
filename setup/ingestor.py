@@ -5,6 +5,7 @@ import dotenv
 import logging
 from conect.engineSQL import Conections
 
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
@@ -68,7 +69,7 @@ def ingestSQL() -> None:
 
             df = pd.read_csv(f, delimiter=",", index_col=False, encoding="ISO-8859-1")
 
-            logger.info(f"Ingestão {df.head()} ocorreu com sucesso.")
+            logger.info(f"Ingestão {names[n]} ocorreu com sucesso.")
             df.to_sql(
                 name=names[n],
                 con=connection,

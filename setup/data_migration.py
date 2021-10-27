@@ -5,7 +5,8 @@ import logging
 import dotenv
 from conect.engineSQL import Conections
 
-logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__file__)
 logger.setLevel(logging.INFO)
 
 
@@ -87,9 +88,7 @@ def loadDataDW(name: str, df: pd.DataFrame) -> None:
 
 if __name__ == "__main__":
 
-    logger = logging.getLogger(__name__)
-    logger.setLevel(logging.INFO)
-
+    
     nameFiles = [
         "channels",
         "deliveries",
@@ -114,6 +113,6 @@ if __name__ == "__main__":
 
         loadDataDW(name=i, df=tabela)
         logger.info(
-            f"Replicação da tabela executada com sucesso {i} para o Data Warehouse."
+            f"Replicação da tabela executada com sucesso {i} para staging."
         )
         logger.info(f"Tabela carregada {tabela.head()}.")
